@@ -11,7 +11,12 @@ connectDB();
 
 const app = express();
 app.use(cors({
-  origin: "*", // or your vercel domain
+  origin: [
+    "http://localhost:5173",
+    "https://vercel.com/govindjee725s-projects/pyqwithnote"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
 }));
 app.use(express.json());
 
