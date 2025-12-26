@@ -10,7 +10,9 @@ dotenv.config();
 connectDB();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "*", // or your vercel domain
+}));
 app.use(express.json());
 
 app.use("/api/pyqs", pyqRoutes);
